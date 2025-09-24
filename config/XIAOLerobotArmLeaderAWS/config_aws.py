@@ -1,0 +1,5 @@
+AWS_ENDPOINT = b'a1imgk4cc11117-ats.iot.ap-southeast-2.amazonaws.com'
+THING_NAME = b'XIAOLerobotArmLeaderAWS'
+PUB_TOPIC = b'the-project/robotic/XIAOLerobotArmLeaderAWS/state'
+SUB_TOPIC = b'the-project/robotic/XIAOLerobotArmLeaderAWS/action'
+PARTITION_KEY = b'device_name'
