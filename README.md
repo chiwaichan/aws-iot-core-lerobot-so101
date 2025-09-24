@@ -35,11 +35,43 @@ This enables remote teleoperation where the leader arm's movements are replicate
 ## 📋 Hardware Requirements
 
 ### Required Components
-- **Seeed Studio XIAO ESP32-C3** development board
-- **LeRobot SO101** robotic arm (6x Feetech SCS3215 servos)
-- **SSD1306 OLED Display** (128x64, I2C interface) - Optional but recommended
+
+#### Core Hardware
+- **[SO-ARM100 Low Cost AI Arm Kit Pro](https://www.seeedstudio.com/SO-ARM100-Low-Cost-AI-Arm-Kit-Pro-p-6343.html)**
+  - 3D-printed robotic arm frame
+  - 6x Feetech SCS3215 digital servos
+  - Complete mechanical assembly kit
+  - Open-source design for DIY robotics projects
+
+- **[Seeed Studio XIAO ESP32-C3](https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html)** development board (x2 - one for leader, one for follower)
+  - WiFi and Bluetooth connectivity
+  - Compact form factor (20x17.5mm)
+  - USB-C programming interface
+  - 3.3V/5V power options
+
+- **[Bus Servo Driver Board for XIAO](https://www.seeedstudio.com/Bus-Servo-Driver-Board-for-XIAO-p-6413.html)**
+  - Multi-servo control capability
+  - UART communication interface
+  - Designed specifically for XIAO microcontrollers
+  - Compact design for robotic applications
+
+#### Additional Components
+- **SSD1306 OLED Display** (128x64, I2C interface) - Optional but recommended for status monitoring
 - **USB-C Cable** for programming and power
-- **External Power Supply** for the robotic arm (7.4V recommended)
+- **External Power Supply** for the robotic arm (7.4V recommended for optimal servo performance)
+
+### Bill of Materials (BOM)
+
+| Component | Quantity | Seeed Studio Link | Notes |
+|-----------|----------|-------------------|-------|
+| SO-ARM100 Low Cost AI Arm Kit Pro | 2 | [Buy Here](https://www.seeedstudio.com/SO-ARM100-Low-Cost-AI-Arm-Kit-Pro-p-6343.html) | One for leader, one for follower |
+| XIAO ESP32-C3 | 2 | [Buy Here](https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html) | WiFi-enabled microcontroller |
+| Bus Servo Driver Board for XIAO | 2 | [Buy Here](https://www.seeedstudio.com/Bus-Servo-Driver-Board-for-XIAO-p-6413.html) | Servo interface board |
+| SSD1306 OLED Display (128x64) | 2 | Generic | Optional, I2C interface |
+| 7.4V Power Supply | 2 | Generic | For servo power |
+| USB-C Cables | 2 | Generic | Programming and debugging |
+
+**Total Estimated Cost**: ~$400-500 USD (depending on supplier and shipping)
 
 ### Servo Configuration
 The LeRobot SO101 uses 6 Feetech SCS3215 servos with the following joint assignments:
@@ -63,19 +95,36 @@ The LeRobot SO101 uses 6 Feetech SCS3215 servos with the following joint assignm
 
 ## 🚀 Quick Start Guide
 
-### Step 1: Hardware Setup
+### Step 1: Hardware Assembly
 
-1. **Connect the OLED Display** (Optional):
+#### 1.1 Assemble the SO-ARM100 Robotic Arm
+1. **Follow the assembly guide** provided with the [SO-ARM100 kit](https://www.seeedstudio.com/SO-ARM100-Low-Cost-AI-Arm-Kit-Pro-p-6343.html)
+2. **Install the 6x Feetech SCS3215 servos** in their designated positions
+3. **Set servo IDs** (1-6) using the Feetech servo configuration tool if needed
+4. **Test mechanical movement** to ensure smooth operation
+
+#### 1.2 Connect Bus Servo Driver Board
+1. **Mount the [Bus Servo Driver Board](https://www.seeedstudio.com/Bus-Servo-Driver-Board-for-XIAO-p-6413.html)** on the robotic arm base
+2. **Connect servo bus cable** from the driver board to the servo chain
+3. **Connect power supply** (7.4V recommended) to the driver board power input
+4. **Verify servo power** - servos should initialize and hold position
+
+#### 1.3 ESP32-C3 Connections
+1. **Mount XIAO ESP32-C3** on the Bus Servo Driver Board
+2. **Connect the OLED Display** (Optional but recommended):
    - VCC → 3.3V
    - GND → GND
    - SDA → GPIO 6 (D4)
    - SCL → GPIO 7 (D5)
 
-2. **Connect the Servo Bus**:
-   - Servo Bus TX → GPIO 21 (D10)
-   - Servo Bus RX → GPIO 20 (D9)
-   - Connect servo power supply (7.4V recommended)
-   - Ensure common ground between ESP32-C3 and servo power supply
+3. **Servo Communication** (handled by driver board):
+   - Driver Board TX → GPIO 21 (D10)
+   - Driver Board RX → GPIO 20 (D9)
+   - Power and ground connections via driver board
+
+#### 1.4 Repeat for Second Arm
+- Assemble a second identical setup for the follower arm
+- Both arms should have the same hardware configuration
 
 ### Step 2: Install MicroPython
 
