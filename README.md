@@ -4,9 +4,10 @@ This repository contains MicroPython code for controlling a set of LeRobot SO101
 
 ## 🤖 Project Overview
 
-The LeRobot SO101 is a 6-DOF robotic arm that can be configured as either:
+The LeRobot SO101 is a 6-DOF robotic arm that can be configured as:
 - **Leader Arm**: Reads servo positions and publishes them to AWS IoT Core
 - **Follower Arm**: Receives servo commands from AWS IoT Core and executes them
+- Without a computer such as Raspberry PI
 
 This enables remote teleoperation where the leader arm's movements are replicated by the follower arm through AWS IoT Core messaging.
 
