@@ -1,15 +1,15 @@
 # Controlling LeRobot SO-101 Arms using AWS IoT and  MicroPython on a Seeed Studio ESP32C3
 
-This repository contains MicroPython code for controlling a set of LeRobot SO101 robotic arms using AWS IoT Core using Seeed Studio XIAO ESP32-C3 boards; this is the demo I showed during my talk ar the AWS Community Day 2025 talk in Aotearoa New Zealand. The implementation supports both leader and follower arm configurations for teleoperation scenarios over the internet.
+This repository contains the MicroPython code for controlling a set of LeRobot SO101 robotic arms using Seeed Studio XIAO ESP32-C3 micro-controllers over AWS IoT Core; this is the code for the demo I did during my talk at the AWS Community Day 2025 talk in Aotearoa New Zealand. The implementation supports both leader and follower arm configurations for teleoperation scenarios over the internet.
 
 ## 🤖 Project Overview
 
 The LeRobot SO101 is a 6-DOF robotic arm that can be configured as:
-- **Leader Arm**: Reads servo positions and publishes them to AWS IoT Core
-- **Follower Arm**: Receives servo commands from AWS IoT Core and executes them
+- **Leader Arm**: Reads servo positions and publishes them as MQTT messages to an AWS IoT Core Topic
+- **Follower Arm**: Receives the MQTT messages from AWS IoT Core Topic sent by the Leader Arm
+- The **Follower Arm** follows the movement of the **Leader Arm**
 - Without a computer such as Raspberry PI
-
-This enables remote teleoperation where the leader arm's movements are replicated by the follower arm through AWS IoT Core messaging.
+- Controller over the internet
 
 ## 🏗️ System Architecture
 
