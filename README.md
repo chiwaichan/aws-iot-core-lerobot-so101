@@ -9,7 +9,8 @@ The LeRobot SO101 is a 6-DOF robotic arm that can be configured as:
 - **Follower Arm**: Receives the MQTT messages from AWS IoT Core Topic sent by the Leader Arm
 - The **Follower Arm** follows the movement of the **Leader Arm**
 - Without a computer such as Raspberry PI
-- Controller over the internet
+- Controlled over the internet
+
 
 ## 🏗️ System Architecture
 
