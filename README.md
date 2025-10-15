@@ -48,44 +48,7 @@ The LeRobot SO101 is a 6-DOF robotic arm that can be configured as:
     - Assembly hardware and mounting components
   - Open-source design for DIY robotics projects
   - Ready-to-assemble complete solution
-
-#### Additional Components
-- **SSD1306 OLED Display** (128x64, I2C interface) - Optional but recommended for status monitoring
-- **USB-C Cable** for programming and power
-- **External Power Supply** for the robotic arm (7.4V recommended for optimal servo performance)
-
-### Bill of Materials (BOM)
-
-| Component | Quantity | Purchase Link | Notes |
-|-----------|----------|---------------|-------|
-| **SO-ARM100 Low Cost AI Arm Kit Pro** | 2 | [Buy Here](https://www.seeedstudio.com/SO-ARM100-Low-Cost-AI-Arm-Kit-Pro-p-6343.html) | **Complete kit includes everything:** ESP32-C3, driver board, servos, frame |
-| SSD1306 OLED Display (128x64) | 2 | Generic supplier | Optional for status display |
-| External Power Supply (7.4V) | 2 | Generic supplier | For servo operation |
-
-**Total Estimated Cost**: ~$200-300 USD (two complete kits + accessories)
-
-> **Note**: The SO-ARM100 kit is a complete solution that includes the XIAO ESP32-C3, Bus Servo Driver Board, all servos, mechanical components, and assembly hardware. You only need to purchase two kits plus optional displays and power supplies.
-
-### Servo Configuration
-The LeRobot SO101 uses 6 Feetech SCS3215 servos with the following joint assignments:
-1. **Servo 1**: Shoulder Pan (-180° to 180°)
-2. **Servo 2**: Shoulder Lift (-90° to 90°)
-3. **Servo 3**: Elbow Flex (-135° to 135°)
-4. **Servo 4**: Wrist Flex (-90° to 90°)
-5. **Servo 5**: Wrist Roll (-180° to 180°)
-6. **Servo 6**: Gripper (-90° to 90°)
-
-### Pin Connections (XIAO ESP32-C3)
-
-| Component | ESP32-C3 Pin | Notes |
-|-----------|--------------|-------|
-| SSD1306 SDA | GPIO 6 (D4) | I2C Data |
-| SSD1306 SCL | GPIO 7 (D5) | I2C Clock |
-| Servo UART TX | GPIO 21 (D10) | To servo bus |
-| Servo UART RX | GPIO 20 (D9) | From servo bus |
-| Power | 5V/3.3V | External power recommended |
-| Ground | GND | Common ground |
-
+    
 ## 🚀 Quick Start Guide
 
 ### Step 1: Hardware Assembly
