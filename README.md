@@ -29,7 +29,6 @@ The LeRobot SO101 is a 6-DOF robotic arm that can be configured as:
 - **MQTT Topics**: Real-time servo position data exchange
 
 ### Communication Features
-- **Real-time Teleoperation**: Sub-100ms latency for responsive control
 - **Secure Authentication**: X.509 certificates for device identity verification
 - **Bidirectional Messaging**: Leader publishes positions, Follower subscribes and executes
 - **Network Resilience**: Automatic reconnection and error recovery mechanisms
