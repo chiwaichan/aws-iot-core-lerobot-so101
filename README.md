@@ -69,14 +69,6 @@ The LeRobot SO101 is a 6-DOF robotic arm that can be configured as:
    esptool.py --chip esp32c3 --port /dev/ttyACM0 write_flash -z 0x0 esp32c3-usb-20240222-v1.22.2.bin
    ```
 
-3. **Install required MicroPython libraries**:
-   ```bash
-   # Connect to MicroPython REPL
-   # Install umqtt.simple library
-   import upip
-   upip.install('micropython-umqtt.simple')
-   ```
-
 ### Step 2: Configure WiFi
 
 1. **Edit `config_wifi.py`**:
