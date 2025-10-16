@@ -49,30 +49,8 @@ The LeRobot SO101 is a 6-DOF robotic arm that can be configured as:
     
 ## 🚀 Quick Start Guide
 
-### Step 1: Hardware Assembly
 
-#### 1.1 Assemble the SO-ARM100 Robotic Arms
-1. **Unbox two [SO-ARM100 kits](https://www.seeedstudio.com/SO-ARM100-Low-Cost-AI-Arm-Kit-Pro-p-6343.html)** - each contains all necessary components
-2. **Follow the assembly guide** provided with each kit
-3. **Assemble the mechanical frame** using the included 3D-printed parts
-4. **Install the pre-configured servos** in their designated positions (servos should already have correct IDs 1-6)
-5. **Mount the included Bus Servo Driver Board** on each robotic arm base
-6. **Connect the included XIAO ESP32-C3** to each driver board
-7. **Test mechanical assembly** before proceeding to software setup
-
-#### 1.2 Optional Display Setup
-1. **Connect the OLED Display** to each arm (Optional but recommended):
-   - VCC → 3.3V
-   - GND → GND
-   - SDA → GPIO 6 (D4)
-   - SCL → GPIO 7 (D5)
-
-#### 1.3 Power and Final Connections
-1. **Connect external power supply** (7.4V) to each driver board
-2. **Verify all connections** - servo communication is handled automatically by the included driver boards
-3. **Test both arms** - servos should initialize and hold position when powered
-
-### Step 2: Install MicroPython
+### Step 1: Install MicroPython
 
 1. **Download MicroPython firmware** for ESP32-C3:
    ```bash
@@ -99,7 +77,7 @@ The LeRobot SO101 is a 6-DOF robotic arm that can be configured as:
    upip.install('micropython-umqtt.simple')
    ```
 
-### Step 3: Configure WiFi
+### Step 2: Configure WiFi
 
 1. **Edit `config_wifi.py`**:
    ```python
@@ -107,7 +85,7 @@ The LeRobot SO101 is a 6-DOF robotic arm that can be configured as:
    WIFI_PASSWORD = b'YOUR_WIFI_PASSWORD'
    ```
 
-### Step 4: AWS IoT Core Setup
+### Step 3: AWS IoT Core Setup
 
 ⚠️ **Important**: The certificates included in this repository are **no longer active** and are provided for reference only to demonstrate the setup process.
 
@@ -155,26 +133,23 @@ The LeRobot SO101 is a 6-DOF robotic arm that can be configured as:
    }
    ```
 
-### Step 5: Upload Files to ESP32-C3
+### Step 4: Upload Files to ESP32-C3
 
 Upload the following files to your ESP32-C3:
 
 **For Leader Arm:**
 - `lerobot-leader-aws.py` (rename to `main.py`)
 - `config_wifi.py`
-- `ssd1306.py`
 - `config/XIAOLerobotArmLeaderAWS/` (entire folder)
 
 **For Follower Arm:**
 - `lerobot-follower-aws.py` (rename to `main.py`)
 - `config_wifi.py`
-- `ssd1306.py`
 - `config/XIAOLerobotArmFollowerAWS/` (entire folder)
 
-### Step 6: Testing
+### Step 5: Testing
 
 1. **Power on both devices**
-2. **Check OLED display** for connection status
 3. **Move the leader arm** manually (torque is disabled)
 4. **Observe the follower arm** replicating movements
 5. **Monitor AWS IoT Test console** for message flow
