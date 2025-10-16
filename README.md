@@ -223,24 +223,15 @@ aws-iot-core-lerobot-so101/
 
 **Servo Issues:**
 - Verify UART connections (TX/RX pins)
-- Check servo power supply (7.4V recommended)
+- Check servo power supply
 - Ensure servo IDs are set correctly (1-6)
-
-**Display Issues:**
-- Verify I2C connections (SDA/SCL pins)
-- Check I2C address (default: 0x3C)
-- Display is optional - code works without it
 
 ### Debug Mode
 Enable debug output by setting `SHOW_DEBUG = True` in the leader code to monitor:
 - MQTT connection status
 - Publish count and frequency
 - Error messages and reconnection attempts
-
-## 📝 License
-
-This project is open source. Please ensure you comply with AWS IoT Core terms of service and any applicable hardware licenses.
-
+  
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit issues, suggestions, or pull requests.
