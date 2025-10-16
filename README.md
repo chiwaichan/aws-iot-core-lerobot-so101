@@ -40,10 +40,8 @@ The LeRobot SO101 is a 6-DOF robotic arm that can be configured as:
 #### Core Hardware
 - **[SO-ARM100 Low Cost AI Arm Kit Pro](https://www.seeedstudio.com/SO-ARM100-Low-Cost-AI-Arm-Kit-Pro-p-6343.html)** (x2 - one for leader, one for follower)
   - **Complete kit includes:**
-    - 3D-printed robotic arm frame and all mechanical parts
-    - 6x Feetech SCS3215 digital servos (pre-configured)
-    - XIAO ESP32-C3 development board
-    - Bus Servo Driver Board for XIAO
+    - 12x Feetech SCS3215 digital servos
+    - 2x Bus Servo Driver Board for XIAO
     - All necessary cables and connectors
     - Assembly hardware and mounting components
   - Open-source design for DIY robotics projects
